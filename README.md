@@ -5,7 +5,7 @@ This is a real-time chat application built using the MERN stack (MongoDB, Expres
 ## Deployed Application
 
 - **Frontend (Netlify):** [Link to your deployed frontend]
-- **Backend (Render):** [Link to your deployed backend]
+- **Backend (Render):** [https://sharedchatroomapi.onrender.com](https://sharedchatroomapi.onrender.com)
 
 To use the application, open the frontend link, enter a username, and start chatting. Open multiple tabs to simulate different users.
 
@@ -64,7 +64,7 @@ The frontend is a single-page application built with **Vite + React**.
 ### 1. Clone the Repository
 
 ```bash
-git clone [your-repo-url]
+git clone https://github.com/sudhanshuBHU/shared-ChatRoom
 cd shared-ChatRoom
 ```
 
