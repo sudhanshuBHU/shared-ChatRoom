@@ -71,7 +71,7 @@ wss.on('connection', async (ws) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('WebSocket server is running');
+    res.send('WebSocket server for Shared ChatRoom is running');
 });
 
 // --- Error Handling Middleware ---

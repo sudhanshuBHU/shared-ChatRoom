@@ -8,6 +8,7 @@ function Chat() {
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState('');
     const [error, setError] = useState('');
+    const [wsError, setWsError] = useState('');
 
     const ws = useRef(null);
     const chatEndRef = useRef(null);
@@ -23,7 +24,10 @@ function Chat() {
             ws.current = new WebSocket(WEBSOCKET_URL);
             // console.log(ws.current);
 
-            ws.current.onopen = () => console.log('WebSocket connected', username);
+            ws.current.onopen = () => {
+                console.log('WebSocket connected', username);
+                setWsError('');
+            }
             ws.current.onclose = () => console.log('WebSocket disconnected');
 
             ws.current.onmessage = (event) => {
@@ -35,7 +39,10 @@ function Chat() {
                 }
             };
 
-            ws.current.onerror = (error) => console.error('WebSocket error:', error);
+            ws.current.onerror = (error) => {
+                console.error('WebSocket error:', error);
+                setWsError('WebSocket error occurred. Server Error: 500');
+            };
 
             return () => {
                 if (ws.current) ws.current.close();
@@ -48,7 +55,7 @@ function Chat() {
         if (username.trim()) {
             setIsLoggedIn(true);
             setError('');
-        }else{
+        } else {
             setError('username cannot be empty.');
         }
     };
@@ -121,6 +128,9 @@ function Chat() {
                         ))}
                         {/* Empty div to which we'll scroll */}
                         <div ref={chatEndRef} />
+                        {
+                            wsError && <div className='mt-1 bg-gray-200 text-red-500 p-3 rounded-lg max-w-md shadow-sm'>{wsError}</div>
+                        }
                     </div>
                 </div>
 
