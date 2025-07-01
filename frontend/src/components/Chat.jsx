@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
-const WEBSOCKET_URL = import.meta.env.VITE_API_URL || 'ws://localhost:8080';
+// const WEBSOCKET_URL = import.meta.env.VITE_API_URL || 'ws://localhost:8080';
+const WEBSOCKET_URL = "https://sharedchatroomapi.onrender.com";
 
 function Chat() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);

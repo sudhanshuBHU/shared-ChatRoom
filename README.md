@@ -4,7 +4,7 @@ This is a real-time chat application built using the MERN stack (MongoDB, Expres
 
 ## Deployed Application
 
-- **Frontend (Netlify):** [Link to your deployed frontend]
+- **Frontend (Netlify):** [https://zesty-tanuki-779c55.netlify.app/](https://zesty-tanuki-779c55.netlify.app/)
 - **Backend (Render):** [https://sharedchatroomapi.onrender.com](https://sharedchatroomapi.onrender.com)
 
 To use the application, open the frontend link, enter a username, and start chatting. Open multiple tabs to simulate different users.
